@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">3D Printer App</string>
+
+    <string-array name="RequestMover">
+        <item>Approved</item>
+        <item>Request</item>
+        <item>Denied</item>
+    </string-array>
 </resources>
+
+    <!--https://www.youtube.com/watch?v=on_OrrX7Nw4-->

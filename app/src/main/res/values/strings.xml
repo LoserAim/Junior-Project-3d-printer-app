@@ -20,4 +20,5 @@
 
     <string name="str_Printer6_desc">Printer 6 will be available in 356 nickoraguas</string>
     <string name="str_Printer6">Printer 6</string>
+    <string name="title_activity_login">activity_login</string>
 </resources>

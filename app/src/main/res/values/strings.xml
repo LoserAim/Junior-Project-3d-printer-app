@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">3D Printer App</string>
-
+    <string-array name="RequestMover">
+        <item>Approved</item>
+        <item>Request</item>
+        <item>Denied</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main_admin">MainAdminActivity</string>

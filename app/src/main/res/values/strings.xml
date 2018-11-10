@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">3D Printer App</string>
+
     <string name="btn_Login">Login</string>
     <string name="btn_Request">Submit Request</string>
     <string name="btn_schedule_now">Schedule Now</string>
@@ -21,4 +22,22 @@
     <string name="str_Printer6_desc">Printer 6 will be available in 356 nickoraguas</string>
     <string name="str_Printer6">Printer 6</string>
     <string name="title_activity_login">activity_login</string>
+
+    <string-array name="RequestMover">
+        <item>Approved</item>
+        <item>Request</item>
+        <item>Denied</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main_admin">MainAdminActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
 </resources>
+
+    <!--https://www.youtube.com/watch?v=on_OrrX7Nw4-->

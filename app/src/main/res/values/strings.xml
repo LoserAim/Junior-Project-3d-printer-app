@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">3D Printer App</string>
+    <string name="btn_Login">Login</string>
+    <string name="btn_Request">Submit Request</string>
+    <string name="btn_schedule_now">Schedule Now</string>
+    <string name="btn_Printer1">Printer 1</string>
+    <string name="str_Printer1_desc">Printer 1 is now available for Today</string>
+
+    <string name="str_Printer4_desc">Printer 4 will be available pizza time</string>
+    <string name="str_Printer4">Printer 4</string>
+
+    <string name="str_Printer3_desc">Printer 3 will be available in 57 minutes</string>
+    <string name="str_Printer3">Printer 3</string>
+
+    <string name="str_Printer2_desc">Printer 2 will be available in 18 minutes</string>
+    <string name="str_Printer2">Printer 2</string>
+
+    <string name="str_Printer5_desc">Printer 5 will be available in 240 bradiniums</string>
+    <string name="str_Printer5">Printer 5</string>
+
+    <string name="str_Printer6_desc">Printer 6 will be available in 356 nickoraguas</string>
+    <string name="str_Printer6">Printer 6</string>
 </resources>

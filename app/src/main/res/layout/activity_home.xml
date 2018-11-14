@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Login"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Request"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="295dp"
+        android:layout_height="440dp"
+        android:layout_above="@id/buttons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-3dp">
+        <!--Scrollable content here-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_Printer1"
+                android:textSize="28sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer1_desc"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_printer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_schedule_now"
+                android:background="@android:color/holo_green_light"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer2"
+                android:textSize="28sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer2_desc"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_printer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_schedule_now"
+                android:background="@android:color/holo_orange_light"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer3"
+                android:textSize="28sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer3_desc"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/btn_printer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_schedule_now"
+                android:background="@android:color/holo_purple"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer4"
+                android:textSize="28sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer4_desc"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_schedule_now"
+                android:background="@android:color/holo_red_light"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer5"
+                android:textSize="28sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer5_desc"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_schedule_now"
+                android:background="@android:color/holo_red_light"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer6"
+                android:textSize="28sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_Printer6_desc"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_schedule_now"
+                android:background="@android:color/holo_red_light"
+
+
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

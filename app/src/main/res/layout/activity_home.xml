@@ -14,10 +14,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_Login"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_Request"/>
+            android:onClick="StartPrintRequest"
+            android:text="@string/btn_Request" />
     </LinearLayout>
 
     <ScrollView

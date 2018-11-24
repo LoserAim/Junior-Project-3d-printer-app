@@ -5,14 +5,16 @@ public class MD_Student {
     String Email;
     String Password;
     String Name;
-    boolean admin;
+    int admin;
 
     public MD_Student(){}
 
-    public MD_Student(String _email, String _pw, boolean _admin)
+    public MD_Student(int stuID, String _email, String _pw, String _Name, int _admin)
     {
+        this.StudentID = stuID;
         this.Email = _email;
         this.Password = _pw;
+        this.Name = _Name;
         this.admin = _admin;
     }
 
@@ -21,6 +23,7 @@ public class MD_Student {
       this.StudentID = Id;
     }
 
+    public void SetName (String _Name) { this.Name = _Name; }
     public void SetEmail(String _email)
     {
         this.Email = _email;
@@ -31,7 +34,7 @@ public class MD_Student {
         this.Password = _password;
     }
 
-    public void SetAdmin(boolean _admin)
+    public void SetAdmin(int _admin)
     {
         this.admin = _admin;
     }
@@ -41,6 +44,7 @@ public class MD_Student {
         return this.StudentID;
     }
 
+    public String GetName () { return this.Name; }
     public String GetEmail()
     {
         return this.Email;
@@ -49,7 +53,7 @@ public class MD_Student {
     {
         return this.Password;
     }
-    public boolean GetAdmin()
+    public int GetAdmin()
     {
         return this.admin;
     }

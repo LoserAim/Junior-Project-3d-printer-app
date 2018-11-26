@@ -1,15 +1,19 @@
 package com.a3dprinterapp.pre_sql.a3dprinterapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class RequestInfoActivity extends AppCompatActivity
-{
+public class RequestInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -39,6 +43,9 @@ public class RequestInfoActivity extends AppCompatActivity
                 }
             }
         });
+
+        Spinner spinnerPrinters = findViewById(R.id.spinnerPrinters);
+        spinnerPrinters.setOnItemSelectedListener(new SpinnerActivity());
     }
 
     public void AddAttachment(View view)
@@ -54,6 +61,31 @@ public class RequestInfoActivity extends AppCompatActivity
     public void SubmitRequest(View view)
     {
         // Submit the print request
+        Intent intent = new Intent(this, activity_home.class);
+        startActivity(intent);
+        // Notify user that request is sent
+    }
+
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+
+    public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener
+    {
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int pos, long id) {
+            // An item was selected. You can retrieve the selected item using
+            // parent.getItemAtPosition(pos)
+            Toast.makeText(parent.getContext(), parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+        }
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Another interface callback
+        }
     }
 
     //Source: https://stackoverflow.com/questions/33072569/best-practice-input-validation-android

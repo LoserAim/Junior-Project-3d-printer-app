@@ -26,6 +26,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/go_to_admin_temp_btn"
+
+                android:text="Go To Admin"/>
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"

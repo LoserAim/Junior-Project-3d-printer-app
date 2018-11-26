@@ -23,7 +23,7 @@ public class StudentMain extends Fragment {
             @Override
             public void onClick(View v) {
                 //TODO::Change this to the new login page (it was broken on my branch while i made this
-                Intent intent = new Intent(getActivity(), MainAdminActivity.class);
+                Intent intent = new Intent(getActivity(), activity_login.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +32,7 @@ public class StudentMain extends Fragment {
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_login.class);
+                Intent intent = new Intent(getActivity(), activity_submit_request.class);
                 startActivity(intent);
             }
         });

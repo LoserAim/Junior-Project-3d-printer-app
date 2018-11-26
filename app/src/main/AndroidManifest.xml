@@ -14,9 +14,6 @@
 
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        android:theme="@style/AppTheme">
-
-        android:theme="@style/AppTheme">
 
 
         <activity android:name=".activity_home">
@@ -28,7 +25,7 @@
         </activity>
 
 
-        <activity android:name=".RequestInfoActivity" >
+        <activity android:name=".activity_submit_request" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

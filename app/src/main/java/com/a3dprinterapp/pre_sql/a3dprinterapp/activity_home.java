@@ -34,7 +34,7 @@ public class activity_home extends AppCompatActivity {
 //    public void StartPrintRequest()
 //    {
 //        /* move to print request info page */
-//        Intent intent = new Intent(this, RequestInfoActivity.class);
+//        Intent intent = new Intent(this, activity_submit_request.class);
 //        startActivity(intent);
 //    }
 
@@ -62,18 +62,19 @@ public class activity_home extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabsStudent);
-
+        //tabLayout.setElevation(0); this didnt work
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabStudent);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        We don't need this currently, but we have left it here for furture use
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabStudent);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
     }
 
@@ -161,6 +162,10 @@ public class activity_home extends AppCompatActivity {
             // Show 2 total pages.
             return 2;
         }
+    }
+    public void GoToAdmin(View view){
+        Intent intent = new Intent (this, MainAdminActivity.class);
+        startActivity(intent);
     }
 
     public void goToLoginActivity (View view){

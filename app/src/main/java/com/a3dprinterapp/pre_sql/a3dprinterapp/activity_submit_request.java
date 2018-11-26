@@ -13,12 +13,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RequestInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class activity_submit_request extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_requestinfo);
+        setContentView(R.layout.activity_submit_request);
 
         EditText userName = findViewById(R.id.editName);
         userName.addTextChangedListener(new TextValidator(userName) {

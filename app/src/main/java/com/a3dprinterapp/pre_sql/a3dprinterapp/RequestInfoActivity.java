@@ -14,18 +14,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class RequestInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    DB_DatabaseHelper db;
+    private MD_Student student = new MD_Student();
+    private MD_Requests request = new MD_Requests();
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requestinfo);
-
+        db = new DB_DatabaseHelper(getApplicationContext());
         EditText userName = findViewById(R.id.editName);
         userName.addTextChangedListener(new TextValidator(userName) {
             @Override public void validate(TextView textView, String text) {
                 if (!text.matches("[ a-zA-Z]+$"))
                 {
                     textView.setError("Please only enter your name.");
+                }
+                else
+                {
+                    student.SetName(text);
                 }
             }
         });
@@ -40,6 +49,10 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
                 if (text.length() < 5)
                 {
                     textView.setError("Please provide a description of your project.");
+                }
+                else
+                {
+                    request.SetDescription(text);
                 }
             }
         });
@@ -60,7 +73,7 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
 
     public void SubmitRequest(View view)
     {
-        // Submit the print request
+        db.createRequest(request);
         Intent intent = new Intent(this, activity_home.class);
         startActivity(intent);
         // Notify user that request is sent
@@ -81,7 +94,7 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
             // parent.getItemAtPosition(pos)
-            Toast.makeText(parent.getContext(), parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+            request.SetPrinterID(pos);
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Another interface callback

@@ -14,7 +14,8 @@ import android.widget.TextView;
 public class activity_register extends AppCompatActivity {
 
     DB_DatabaseHelper db;
-    MD_Student student;
+    MD_Student        student;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,7 @@ public class activity_register extends AppCompatActivity {
         db.CreateStudent(student);
     }
 
-    public void goToHomeActivity (View view){
+    public void onRegisterClick(View view){
         registerNewStudent();
         Intent intent = new Intent (this, activity_home.class);
         startActivity(intent);

@@ -13,6 +13,13 @@ public class activity_home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
+    public void StartPrintRequest(View view)
+    {
+        // move to print request info page
+        Intent intent = new Intent(this, RequestInfoActivity.class);
+        startActivity(intent);
+    }
+
     public void goToLoginActivity (View view){
         Intent intent = new Intent (this, activity_login.class);
         startActivity(intent);

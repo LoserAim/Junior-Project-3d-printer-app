@@ -1,163 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity_home">
 
-    <LinearLayout
-        android:id="@+id/buttons"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarStu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_alignParentBottom="true">
         <Button
+            android:onClick="goToLoginActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_Login"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="StartPrintRequest"
-            android:text="@string/btn_Request" />
-    </LinearLayout>
 
-    <ScrollView
-        android:layout_width="295dp"
-        android:layout_height="440dp"
-        android:layout_above="@id/buttons"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-3dp">
-        <!--Scrollable content here-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+        <android.support.design.widget.TabLayout
+        android:id="@+id/tabsStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_Printer1"
-                android:textSize="28sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer1_desc"
-                android:textSize="14sp" />
+    <android.support.design.widget.TabItem
+        android:id="@+id/StudentSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="schedule" />
 
-            <Button
-                android:id="@+id/btn_printer1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_schedule_now"
-                android:background="@android:color/holo_green_light"
+    <android.support.design.widget.TabItem
+        android:id="@+id/StudentMesseges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Messeges" />
 
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer2"
-                android:textSize="28sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer2_desc"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/btn_printer2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_schedule_now"
-                android:background="@android:color/holo_orange_light"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer3"
-                android:textSize="28sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer3_desc"
-                android:textSize="14sp" />
-            <Button
-                android:id="@+id/btn_printer3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_schedule_now"
-                android:background="@android:color/holo_purple"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer4"
-                android:textSize="28sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer4_desc"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_schedule_now"
-                android:background="@android:color/holo_red_light"
+    </android.support.design.widget.TabLayout>
+    </android.support.design.widget.AppBarLayout>
 
 
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer5"
-                android:textSize="28sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer5_desc"
-                android:textSize="14sp" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/containerStudent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_schedule_now"
-                android:background="@android:color/holo_red_light"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer6"
-                android:textSize="28sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_Printer6_desc"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btn_schedule_now"
-                android:background="@android:color/holo_red_light"
-
-
-                />
-
-
-        </LinearLayout>
-    </ScrollView>
-
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

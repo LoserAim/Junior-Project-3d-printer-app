@@ -13,6 +13,10 @@ public class activity_login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
+
+
+
+
     public void goToRegisterActivity (View view){
         Intent intent = new Intent (this, activity_register.class);
         startActivity(intent);
@@ -22,4 +26,5 @@ public class activity_login extends AppCompatActivity {
         Intent intent = new Intent (this, activity_home.class);
         startActivity(intent);
     }
+
 }

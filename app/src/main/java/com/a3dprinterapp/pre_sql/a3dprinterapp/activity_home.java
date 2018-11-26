@@ -45,6 +45,7 @@ public class activity_home extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,5 +161,10 @@ public class activity_home extends AppCompatActivity {
             // Show 2 total pages.
             return 2;
         }
+    }
+
+    public void goToLoginActivity (View view){
+        Intent intent = new Intent (this, activity_login.class);
+        startActivity(intent);
     }
 }

@@ -25,6 +25,7 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requestinfo);
         db = new DB_DatabaseHelper(getApplicationContext());
+        student.SetID(1);
         EditText userName = findViewById(R.id.editName);
         userName.addTextChangedListener(new TextValidator(userName) {
             @Override public void validate(TextView textView, String text) {

@@ -112,7 +112,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Create Request table
-    public long createRequest(MD_Requests request, long[] student_ids)
+    public long createRequest(MD_Requests request)
     {
         SQLiteDatabase db = this.getWritableDatabase();
 

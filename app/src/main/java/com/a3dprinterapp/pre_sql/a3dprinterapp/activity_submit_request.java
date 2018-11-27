@@ -13,19 +13,38 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD:app/src/main/java/com/a3dprinterapp/pre_sql/a3dprinterapp/activity_submit_request.java
 public class activity_submit_request extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+=======
+public class RequestInfoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    DB_DatabaseHelper db;
+    private MD_Student student = new MD_Student();
+    private MD_Requests request = new MD_Requests();
+
+>>>>>>> master:app/src/main/java/com/a3dprinterapp/pre_sql/a3dprinterapp/RequestInfoActivity.java
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD:app/src/main/java/com/a3dprinterapp/pre_sql/a3dprinterapp/activity_submit_request.java
         setContentView(R.layout.activity_submit_request);
 
+=======
+        setContentView(R.layout.activity_requestinfo);
+        db = new DB_DatabaseHelper(getApplicationContext());
+        student.SetID(1);
+>>>>>>> master:app/src/main/java/com/a3dprinterapp/pre_sql/a3dprinterapp/RequestInfoActivity.java
         EditText userName = findViewById(R.id.editName);
         userName.addTextChangedListener(new TextValidator(userName) {
             @Override public void validate(TextView textView, String text) {
                 if (!text.matches("[ a-zA-Z]+$"))
                 {
                     textView.setError("Please only enter your name.");
+                }
+                else
+                {
+                    student.SetName(text);
                 }
             }
         });
@@ -40,6 +59,10 @@ public class activity_submit_request extends AppCompatActivity implements Adapte
                 if (text.length() < 5)
                 {
                     textView.setError("Please provide a description of your project.");
+                }
+                else
+                {
+                    request.SetDescription(text);
                 }
             }
         });
@@ -60,7 +83,7 @@ public class activity_submit_request extends AppCompatActivity implements Adapte
 
     public void SubmitRequest(View view)
     {
-        // Submit the print request
+        db.createRequest(request);
         Intent intent = new Intent(this, activity_home.class);
         startActivity(intent);
         // Notify user that request is sent
@@ -81,7 +104,7 @@ public class activity_submit_request extends AppCompatActivity implements Adapte
                                    int pos, long id) {
             // An item was selected. You can retrieve the selected item using
             // parent.getItemAtPosition(pos)
-            Toast.makeText(parent.getContext(), parent.getItemAtPosition(pos).toString(), Toast.LENGTH_LONG).show();
+            request.SetPrinterID(pos);
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Another interface callback

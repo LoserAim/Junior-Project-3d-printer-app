@@ -7,10 +7,15 @@ import android.view.View;
 
 public class activity_register extends AppCompatActivity {
 
+
+    DB_DatabaseHelper db;
+    MD_Student student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        db = new DB_DatabaseHelper(getApplicationContext());
+        student = new MD_Student();
     }
 
     public void goToHomeActivity (View view){

@@ -10,6 +10,7 @@ public class MD_Requests {
     int PrinterID;
     String DateRequested;
     String ProjectName;
+    String FilePath;
     String Desc;
 
     public MD_Requests() {}
@@ -32,7 +33,7 @@ public class MD_Requests {
     public void SetDateRequested (String _DR) {this.DateRequested = _DR;}
     public void SetProjectName (String _PN) {this.ProjectName = _PN;}
     public void SetDescription (String _Desc) {this.Desc = _Desc;}
-
+    public void SetFilePath (String _FilePath) {this.FilePath = _FilePath;}
 
     public long GetRequestID () {  return this.RequestsID;}
     public String GetStatus () { return this.Status;}
@@ -41,6 +42,7 @@ public class MD_Requests {
     public String GetDateRequested () { return this.DateRequested;}
     public String GetProjectName () { return this.ProjectName;}
     public String GetDescription () { return this.Desc;}
+    public String GetFilePath () {return this.FilePath;}
 
 
 

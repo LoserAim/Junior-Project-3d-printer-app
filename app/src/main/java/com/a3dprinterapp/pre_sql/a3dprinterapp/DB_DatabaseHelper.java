@@ -43,6 +43,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
         private static final String COL_REQUEST_PROJECTNAME = "ProjectName";
         private static final String COL_REQUEST_DESCRIPTION = "Description";
         private static final String COL_REQUEST_DATEREQUESTED = "DateRequested";
+        private static final String  COL_REQUEST_FILEPATH = "FilePath";
 
 
     // Table Create Statements
@@ -63,7 +64,8 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
             + COL_REQUEST_STATUS + " TEXT, "
             + COL_REQUEST_PROJECTNAME + " TEXT, "
             + COL_REQUEST_DESCRIPTION + " TEXT, "
-            + COL_REQUEST_DATEREQUESTED + " DATETIME, " +
+            + COL_REQUEST_DATEREQUESTED + " DATETIME, "
+            + COL_REQUEST_FILEPATH +" TEXT, " +
             "FOREIGN KEY (" + COL_REQUEST_FK_STUDENT + ") REFERENCES "+ TABLE_STUDENT +" ("+ COL_STUDENT_ID+ ") ON DELETE CASCADE) ";
 
 
@@ -112,7 +114,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Create Request table
-    public long createRequest(MD_Requests request, long[] student_ids)
+    public long createRequest(MD_Requests request)
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -123,6 +125,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_REQUEST_PROJECTNAME, request.GetProjectName());
         values.put(COL_REQUEST_DESCRIPTION, request.GetDescription());
         values.put(COL_REQUEST_DATEREQUESTED, request.GetDateRequested());
+        values.put(COL_REQUEST_FILEPATH, request.GetFilePath());
 
         //Insert Row
         //Will return ID of row when inserted
@@ -178,6 +181,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
         rt.SetProjectName(c.getString(c.getColumnIndex(COL_REQUEST_PROJECTNAME)));
         rt.SetDescription(c.getString(c.getColumnIndex(COL_REQUEST_DESCRIPTION)));
         rt.SetDateRequested(c.getString(c.getColumnIndex(COL_REQUEST_DATEREQUESTED)));
+        rt.SetFilePath(c.getString(c.getColumnIndex(COL_REQUEST_FILEPATH)));
 
         return rt;
     }
@@ -239,6 +243,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
                 req.SetDateRequested(c.getString(c.getColumnIndex(COL_REQUEST_DATEREQUESTED)));
                 req.SetProjectName(c.getString(c.getColumnIndex(COL_REQUEST_PROJECTNAME)));
                 req.SetDescription(c.getString(c.getColumnIndex(COL_REQUEST_DESCRIPTION)));
+                req.SetDescription(c.getString(c.getColumnIndex(COL_REQUEST_FILEPATH)));
 
                 requests.add(req);
             } while (c.moveToNext());
@@ -287,6 +292,7 @@ public class DB_DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_REQUEST_PROJECTNAME, rq.GetProjectName());
         values.put(COL_REQUEST_DESCRIPTION, rq.GetDescription());
         values.put(COL_REQUEST_DATEREQUESTED, rq.GetDateRequested());
+        values.put(COL_REQUEST_FILEPATH, rq.GetFilePath());
 
 
         // updating row

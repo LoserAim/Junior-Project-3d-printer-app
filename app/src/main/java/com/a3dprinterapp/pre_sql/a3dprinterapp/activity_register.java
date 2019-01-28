@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class activity_register extends AppCompatActivity {
 
     DB_DatabaseHelper db;
@@ -67,15 +69,26 @@ public class activity_register extends AppCompatActivity {
     }
 
     public void registerNewStudent (){
+
+
         String studentEmail    = ((EditText)findViewById(R.id.editText6)).getText().toString();
         String studentName     = ((EditText)findViewById(R.id.editText5)).getText().toString();
         String password        = ((EditText)findViewById(R.id.editText3)).getText().toString();
+        List<MD_Student> temp = db.GetAllStudents();
+        for(MD_Student g : temp)
+        {
+            if(g.GetEmail() != studentEmail)
+            {
+                student.SetEmail(studentEmail);
+                student.SetName(studentName);
+                student.SetPassword(password);
 
-        student.SetEmail(studentEmail);
-        student.SetName(studentName);
-        student.SetPassword(password);
+                db.CreateStudent(student);
+                db.closeDB();
+            }
+        }
 
-        db.CreateStudent(student);
+
     }
 
     public void onRegisterClick(View view){

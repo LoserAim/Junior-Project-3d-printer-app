@@ -1,21 +1,22 @@
 package com.a3dprinterapp.pre_sql.a3dprinterapp;
 
 public class Singleton_Student {
-    public static volatile MD_Student student;
+    public static volatile Singleton_Student instance;
 
+    public MD_Student student;
     private Singleton_Student(){}
-    public static MD_Student GetInstance(String value)
+    public static Singleton_Student GetInstance()
     {
-        if (student == null)
+        if (instance == null)
         {
             synchronized (Singleton_Student.class)
             {
-                if(student == null)
+                if(instance == null)
                 {
-                    student = new MD_Student();
+                    instance = new Singleton_Student();
                 }
             }
         }
-        return student;
+        return instance;
     }
 }

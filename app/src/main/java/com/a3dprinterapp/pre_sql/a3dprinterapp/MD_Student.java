@@ -39,7 +39,7 @@ public class MD_Student {
         this.admin = _admin;
     }
 
-    public long GetId()
+    public int GetId()
     {
         return this.StudentID;
     }

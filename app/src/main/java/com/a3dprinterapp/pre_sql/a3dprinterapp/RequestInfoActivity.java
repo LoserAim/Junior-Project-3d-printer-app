@@ -18,6 +18,7 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
     DB_DatabaseHelper db;
     private MD_Student student = new MD_Student();
     private MD_Requests request = new MD_Requests();
+    Singleton_Student Account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,7 +26,8 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requestinfo);
         db = new DB_DatabaseHelper(getApplicationContext());
-        student.SetID(1);
+        Account = Singleton_Student.GetInstance();
+        student.SetID(Account.student.GetId());
         EditText userName = findViewById(R.id.editName);
         userName.addTextChangedListener(new TextValidator(userName) {
             @Override public void validate(TextView textView, String text) {
@@ -35,7 +37,11 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
                 }
                 else
                 {
-                    student.SetName(text);
+                    if (Account.student.GetName() == null)
+                    {
+                        Account.student.SetName(text);
+                    }
+
                 }
             }
         });
@@ -75,6 +81,7 @@ public class RequestInfoActivity extends AppCompatActivity implements AdapterVie
     public void SubmitRequest(View view)
     {
         db.createRequest(request);
+        db.closeDB();
         Intent intent = new Intent(this, activity_home.class);
         startActivity(intent);
         // Notify user that request is sent

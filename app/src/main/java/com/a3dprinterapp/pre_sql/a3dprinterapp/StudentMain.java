@@ -32,8 +32,16 @@ public class StudentMain extends Fragment {
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_login.class);
-                startActivity(intent);
+                Singleton_Student Account = Singleton_Student.GetInstance();
+
+                if(Account.student!=null){
+                    Intent intent = new Intent (getActivity(), RequestInfoActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(getActivity(), activity_login.class);
+                    startActivity(intent);
+                }
             }
         });
 

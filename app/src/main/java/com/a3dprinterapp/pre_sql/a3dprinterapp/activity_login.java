@@ -40,6 +40,8 @@ public class activity_login extends AppCompatActivity {
             {
                 if(Password.getText().toString().equalsIgnoreCase(g.GetPassword()))
                 {
+                    Account.student = new MD_Student();
+
                 Account.student.SetAdmin(0);
                 Account.student.SetEmail(g.GetEmail());
                 Account.student.SetPassword(g.GetPassword());
@@ -53,5 +55,4 @@ public class activity_login extends AppCompatActivity {
         }
 
     }
-
 }
